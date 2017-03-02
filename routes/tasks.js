@@ -1,3 +1,4 @@
+
 exports.addTask = function(req, res){
 var taskName = req.body.taskName;
   // This will print in your terminal when a POST is made
@@ -8,3 +9,16 @@ var taskName = req.body.taskName;
   // Lets send our task name back so our browser knows it worked out!
   res.send(taskName);
 }
+
+var data = {
+  tasks: ['Finish this lab']
+};
+
+/*
+ * GET tasks page.
+ */
+exports.view = function(req, res){
+  res.render('tasks', data);
+};
+
+
